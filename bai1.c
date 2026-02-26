@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Nguyễn Phúc Nhân]
+ * MSSV:      [PS47835]
+ * Lớp:       [CS21301]
  *****************************************************************************/
 
 //  BÀI 1: XÂY DỰNG CHƯƠNG TRÌNH ĐẾM NGUYÊN ÂM VÀ PHỤ ÂM CỦA 1 CHUỖI 
@@ -12,3 +12,56 @@
 
 // VIẾT CODE Ở ĐÂY
 
+/*
+    Xây dựng chương trình đếm số nguyên âm, phụ âm trong 1 chuỗi
+    Input: 1 chuỗi kí tự - có nghĩa là tạo thành 1 mảng với các ký tự 
+    Process: Kiểm tra lần lượt từng phần tử trong mảng ký tự trên
+        Nếu phần tử thứ i  = 'a' || = 'e' || = 'u' || = 'i' || = 'o' || = 'y' thì ta cộng 1 vào biến dếm
+        Còn không thì biến đếm phụ âm tăng 1 
+    Output: Số lượng nguyên âm tương ứng với biến đếm nguyên âm
+            Số lượng phụ âm tương ứng với biến đếm phụ âm
+
+*/
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char tiepTuc;
+    do
+    {
+        char chuoi[100];
+        int phuAm = 0, nguyenAm = 0;
+
+        printf("Bạn hãy nhập vào chuỗi ký tự cần kiểm tra: \n");
+        gets(chuoi);
+        for(int i = 0; i < strlen(chuoi); i++)
+        {
+            if((chuoi[i] >= 'a' && chuoi[i] <= 'z') || chuoi[i] >= 'A' && chuoi[i] <= 'Z' )
+            {
+                if(chuoi[i] == 'a' || chuoi[i] == 'e' || chuoi[i] == 'u' || chuoi[i] == 'i' || chuoi[i] == 'o' || chuoi[i] == 'y'
+                ||chuoi[i] == 'A' || chuoi[i] == 'E' || chuoi[i] == 'U' || chuoi[i] == 'I' || chuoi[i] == 'O'|| chuoi[i] == 'Y' )
+            {
+                nguyenAm = nguyenAm + 1;
+            }
+            else if (chuoi[i] == ' ')
+            {
+                continue;
+            }
+            else phuAm = phuAm + 1;
+            }   
+        }
+        printf("Chuỗi bạn vừa nhập có %d ký tụ nguyên âm\n", nguyenAm);
+        printf("Chuỗi bạn vừa nhập có %d ký tự phụ âm\n", phuAm);
+        
+        char chuoitam[100];
+        strcpy(chuoitam, chuoi);
+        printf("Chuỗi sau khi chuyển về chữ thường là của chuỗi %s là : %s\n",chuoitam, strlwr(chuoi));
+        printf("Chuỗi sau khi chuyển về chữ HOA là của chuỗi %s là : %s\n",chuoitam, strupr(chuoi));
+        printf("Chuỗi mới sau khi đảo ngược từ chuỗi %s là : %s\n",chuoitam , strrev(chuoi));
+
+        printf("Bạn có muốn tiếp tục không? (y/n): ");
+        scanf(" %c", &tiepTuc);
+        getchar();
+    } while (tiepTuc == 'y' || tiepTuc == 'Y');
+    return 0;
+}
