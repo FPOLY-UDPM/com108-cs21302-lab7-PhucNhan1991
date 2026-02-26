@@ -33,7 +33,7 @@ int main()
         int phuAm = 0, nguyenAm = 0;
 
         printf("Bạn hãy nhập vào chuỗi ký tự cần kiểm tra: \n");
-        fgets(chuoi, sizeof(chuoi), stdin);
+        gets(chuoi);
         for(int i = 0; i < strlen(chuoi); i++)
         {
             if(chuoi[i] == 'a' || chuoi[i] == 'e' || chuoi[i] == 'u' || chuoi[i] == 'i' || chuoi[i] == 'o' || chuoi[i] == 'y'
