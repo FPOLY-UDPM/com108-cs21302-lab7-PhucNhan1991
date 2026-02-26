@@ -50,6 +50,10 @@ int main()
         }
         printf("Chuỗi bạn vừa nhập có %d ký tụ nguyên âm\n", nguyenAm);
         printf("Chuỗi bạn vừa nhập có %d ký tự phụ âm\n", phuAm);
+        
+        printf("Chuỗi sau khi chuyển về chữ thường là của chuỗi %s là : %s\n",chuoi, strlwr(chuoi));
+        printf("Chuỗi sau khi chuyển về chữ HOA là của chuỗi %s là : %s\n",chuoi, strupr(chuoi));
+        printf("Chuỗi mới sau khi đảo ngược từ chuỗi %s là : %s\n",chuoi , strrev(chuoi));
 
         printf("Bạn có muốn tiếp tục không? (y/n): ");
         scanf(" %c", &tiepTuc);
