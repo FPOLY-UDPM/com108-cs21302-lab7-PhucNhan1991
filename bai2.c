@@ -29,7 +29,7 @@ int main()
 {
     char userName[100], passWord[100];
     // Cho người dùng nhập chuỗi userName
-
+    
     printf("Bạn hãy nhập USERNAME: \n");
     gets(userName);
 

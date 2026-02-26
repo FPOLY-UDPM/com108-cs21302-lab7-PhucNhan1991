@@ -36,7 +36,9 @@ int main()
         gets(chuoi);
         for(int i = 0; i < strlen(chuoi); i++)
         {
-            if(chuoi[i] == 'a' || chuoi[i] == 'e' || chuoi[i] == 'u' || chuoi[i] == 'i' || chuoi[i] == 'o' || chuoi[i] == 'y'
+            if((chuoi[i] >= 'a' && chuoi[i] <= 'z') || chuoi[i] >= 'A' && chuoi[i] <= 'Z' )
+            {
+                if(chuoi[i] == 'a' || chuoi[i] == 'e' || chuoi[i] == 'u' || chuoi[i] == 'i' || chuoi[i] == 'o' || chuoi[i] == 'y'
                 ||chuoi[i] == 'A' || chuoi[i] == 'E' || chuoi[i] == 'U' || chuoi[i] == 'I' || chuoi[i] == 'O'|| chuoi[i] == 'Y' )
             {
                 nguyenAm = nguyenAm + 1;
@@ -46,14 +48,16 @@ int main()
                 continue;
             }
             else phuAm = phuAm + 1;
-        
+            }   
         }
         printf("Chuỗi bạn vừa nhập có %d ký tụ nguyên âm\n", nguyenAm);
         printf("Chuỗi bạn vừa nhập có %d ký tự phụ âm\n", phuAm);
         
-        printf("Chuỗi sau khi chuyển về chữ thường là của chuỗi %s là : %s\n",chuoi, strlwr(chuoi));
-        printf("Chuỗi sau khi chuyển về chữ HOA là của chuỗi %s là : %s\n",chuoi, strupr(chuoi));
-        printf("Chuỗi mới sau khi đảo ngược từ chuỗi %s là : %s\n",chuoi , strrev(chuoi));
+        char chuoitam[100];
+        strcpy(chuoitam, chuoi);
+        printf("Chuỗi sau khi chuyển về chữ thường là của chuỗi %s là : %s\n",chuoitam, strlwr(chuoi));
+        printf("Chuỗi sau khi chuyển về chữ HOA là của chuỗi %s là : %s\n",chuoitam, strupr(chuoi));
+        printf("Chuỗi mới sau khi đảo ngược từ chuỗi %s là : %s\n",chuoitam , strrev(chuoi));
 
         printf("Bạn có muốn tiếp tục không? (y/n): ");
         scanf(" %c", &tiepTuc);
